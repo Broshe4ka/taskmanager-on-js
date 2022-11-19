@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
+import Layout from '../components/Layout';
+import React from 'react';
+import {SessionProvider} from 'next-auth/react'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = ({ Component, pageProps, session }) => (
+   <SessionProvider session = {session}>
+      <Layout>
+            <Component {...pageProps} />
+      </Layout>
+   </SessionProvider>
+);
 
-export default MyApp
+export default React.memo(MyApp);
