@@ -13,6 +13,11 @@ const Account = () => {
   if (status === 'authenticated'){
     return(
       <>
+      <Head>
+        <title>Hello, {session.user.name} !</title>
+        <link rel="shortcut icon" href="/favicon/icon.svg" />
+      </Head>
+
         <div className={styles.user_account}>
 
           <div className={styles.row }>
